@@ -109,12 +109,31 @@
     text-align: center;
 }
 
+
 #profile .con1 h3 {
     padding-top: 120px;
 }
 
 #profile .con1 p {
     padding-top: 10px;
+    line-height: 40px;
+}
+
+#profile .con1 .con_c {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 1px solid #000;
+    border-radius: 50%;
+}
+
+#profile .con3 {
+    width: 400px;
+    height: 310px;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+    text-align: center;
     line-height: 40px;
 }
 
@@ -168,40 +187,65 @@
     color: rgb(15, 15, 15);
 }
 
-#skill {}
+#skill {
+    width: 400px;
+    height: 438px;
+    margin: 0 auto;
+    border-right: 1px solid #000;
+    border-left: 1px solid #000;
+}
+
+#skill h3 {
+    padding-top: 120px;
+    text-align: center;
+}
+
+#skill ul {
+    width: 400px;
+    height: 80px;
+    margin: 0 auto;
+    padding-top: 20px;
+}
 
 #skill .in_skill {
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 #skill .skill_list {}
 
 #skill .skill_list>li {
-    float: left;
     margin-right: 100px;
+    margin-left: 30px;
     text-align: center;
+    padding-bottom: 30px;
+    display: flex;
 }
 
 #skill .skill_list>li>div {
-    width: 50px;
-    height: 300px;
+    width: 300px;
+    height: 50px;
     border: 1px solid #000;
     position: relative;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 #skill .skill_list>li>div>.in_box {
-    width: 50px;
+    width: 10px;
     height: 300px;
     background-color: #716E64;
     position: absolute;
-    top: 300px;
-    left: 0;
+    top: 0px;
+    left: 300px;
 }
 
-#project_1 {}
+#project_1 h2 {
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    border: 1px solid #000;
+    padding-top: 30px;
+    font-size: 50px;
+}
 
 #project_1 .in_project_1 {
     display: flex;
@@ -222,9 +266,17 @@
 }
 
 #project_1 .output {
-    background: url(../screen.png) no-repeat 0 100px;
+    background: url(../images/monitor-811664_640.png) no-repeat 0 100px;
     background-size: 100%;
 }
+
+#project_1 .output img {
+    width: 480px;
+    height: 235px;
+    margin-top: 115px;
+    margin-left: 12px;
+}
+
 
 #project_1 .output>div {
     width: 420px;
@@ -232,4 +284,85 @@
     border: 1px solid #000;
     box-sizing: border-box;
     margin: 120px 0 0 39px;
+}
+
+#project_1 .account {
+    text-align: center;
+}
+
+#project_1 .account h3 {
+    padding-top: 200px;
+}
+
+#project_1 .account p {
+    line-height: 50px;
+}
+
+#project_1 .account a {
+    margin-left: 30px;
+}
+
+#project_2 h2 {
+    width: 100%;
+    height: 90px;
+    text-align: center;
+    border: 1px solid #000;
+    padding-top: 30px;
+    font-size: 50px;
+}
+
+#project_2 .in_project_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#project_2 .list2 {
+    width: 1000px;
+}
+
+#project_2 .list2>li {
+    float: left;
+    width: 500px;
+    height: 600px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+}
+
+#project_2 .output2 {
+    background: url(../images/monitor-811664_640.png) no-repeat 0 100px;
+    background-size: 100%;
+}
+
+#project_2 .output2 img {
+    width: 480px;
+    height: 235px;
+    margin-top: 115px;
+    margin-left: 12px;
+}
+
+#project_2 .account {}
+
+#project_2 .output2>div {
+    width: 420px;
+    height: 270px;
+    border: 1px solid #000;
+    box-sizing: border-box;
+    margin: 120px 0 0 39px;
+}
+
+#project_2 .account2 {
+    text-align: center;
+}
+
+#project_2 .account2 h3 {
+    padding-top: 200px;
+}
+
+#project_2 .account2 p {
+    line-height: 50px;
+}
+
+#project_2 .account2 a {
+    margin-left: 30px;
 }

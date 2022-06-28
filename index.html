@@ -10,17 +10,26 @@
     <link rel="stylesheet" href="./css/style.css">
     <script src="js/jquery.js"></script>
     <script>
+       
         $(function () {
             var menu = $('.nav > li');
             var contents = $('#wrap > div');
 
+             // jquery 문제
             $('.nav> li').click(function (event) {
                 event.preventDefault();
 
                 var tg = $(this);
                 var i = tg.index();
+                console.log(i);
+                
+                if(i == 0){
+                    var section = $('#wrap > div.box').eq(0);
+                    var tt = section.offset({top:0}).top;
+                    $('html, body').stop().animate({ scrollTop: tt });
+                }
 
-                var section = $('#wrap > div').eq(i);
+                var section = $('#wrap > div.box').eq(i);
                 var tt = section.offset().top;
 
                 $('html, body').stop().animate({ scrollTop: tt });
@@ -55,19 +64,25 @@
 </head>
 
 <body>
+
+    <!-- html : 73번부터 시작, jquery : 19번부터
+    css :  43번 -->
+
+
+    <!-- jquery 문제 -->
     <div id="wrap">
         <!-- 메인 -->
-        <div id="main">
+        <div id="main" class="box">
             <div class="in_main">
                 <div class="header">
-                    <!-- <h1 class="logo">KSJ</h1>
+                    <h1 class="logo">binstarr</h1>
                  <ul class="nav">
                      <li><a href="#">Home</a></li>
                      <li><a href="#">Profile</a></li>
-                     <li><a href="#">Skill</a></li>
-                     <li><a href="#">project1</a></li>
-                     <li><a href="#">finish</a></li>
-                  </ul> -->
+                     <li><a href="#">Project1</a></li>
+                     <li><a href="#">Project2</a></li>
+                     <li><a href="#">Contact</a></li>
+                  </ul>
 
                 </div>
                 <h2>
@@ -77,7 +92,7 @@
             </div>
         </div>
         <!-- 소개 -->
-        <div id="profile">
+        <div id="profile" class="box">
             <h2>ABOUT ME</h2>
             <div class="in_profile">
                 <div class="con">
@@ -111,8 +126,8 @@
                             2020.07 ~ 2021.02<br>
                             코리아아이티(IT)아카데미학원<br>
                             UI&UX 기반 프론트엔드 개발자 양성 과정 A<br>
-                            자바<br>
-                            빽엔드<br>
+                            자바스크립트 기초<br>
+                            백엔드<br>
                         </p>
                     </div>
                 </div>
@@ -122,20 +137,24 @@
                         <div class="in_skill">
                             <ul class="skill_list">
                                 <li>
-                                    <h5>html</h5>
-                                    <div class="in_box in_box01">100%</div>
+                                    <h5>HTML</h5>
+                                    <div class="in_box in_box01">80%</div>
                                 </li>
                                 <li>
-                                    <h5>css</h5>
+                                    <h5>XD</h5>
                                     <div class="in_box in_box02">80%</div>
                                 </li>
                                 <li>
-                                    <h5>jquery</h5>
-                                    <div class="in_box in_box03">50%</div>
+                                    <h5>CSS</h5>
+                                    <div class="in_box in_box03">70%</div>
                                 </li>
                                 <li>
-                                    <h5>java</h5>
-                                    <div class="in_box in_box04">80%</div>
+                                    <h5>JAVA</h5>
+                                    <div class="in_box in_box04">50%</div>
+                                </li>
+                                <li>
+                                    <h5>JQUERY</h5>
+                                    <div class="in_box in_box04">40%</div>
                                 </li>
                             </ul>
                         </div>
@@ -147,17 +166,17 @@
                                     var scrollTop = $(document).scrollTop();
                                     if (scrollTop > 900 && scene01Num == 1) {
                                         scene01Num = 0;
-                                        $('#skill .in_box01').stop().delay(0).css({ left: '300px' }).animate({ left: '50px' }, 1000);
-                                        $('#skill .in_box02').stop().delay(500).css({ left: '300px' }).animate({ left: '50px' }, 1000);
-                                        $('#skill .in_box03').stop().delay(1000).css({ left: '300px' }).animate({ left: '50px' }, 1000);
-                                        $('#skill .in_box04').stop().delay(1500).css({ left: '300px' }).animate({ left: '50px' }, 1000);
+                                        $('#skill .in_box01').stop().delay(0).css({ left: '300px', opacity: 0 }).animate({ left: '50px', opacity: 1}, 1000);
+                                        $('#skill .in_box02').stop().delay(500).css({ left: '300px', opacity: 0 }).animate({ left: '50px', opacity: 1 }, 1000);
+                                        $('#skill .in_box03').stop().delay(1000).css({ left: '300px', opacity: 0 }).animate({ left: '50px', opacity: 1 }, 1000);
+                                        $('#skill .in_box04').stop().delay(1500).css({ left: '300px', opacity: 0 }).animate({ left: '50px', opacity: 1 }, 1000);
                                     }
                                     else if (scrollTop < 600 && scene01Num == 0) {
                                         scene01Num = 1;
-                                        $('#skill .in_box01').stop().css({ left: '150px' }).animate({ left: '300px' }, 1000);
-                                        $('#skill .in_box02').stop().css({ left: '30px' }).animate({ left: '300px' }, 1000);
-                                        $('#skill .in_box03').stop().css({ left: '120px' }).animate({ left: '300px' }, 1000);
-                                        $('#skill .in_box04').stop().css({ left: '100px' }).animate({ left: '300px' }, 1000);
+                                        $('#skill .in_box01').stop().css({ left: '150px', opacity: 1 }).animate({ left: '300px', opacity: 0 }, 1000);
+                                        $('#skill .in_box02').stop().css({ left: '30px', opacity: 1 }).animate({ left: '300px', opacity: 0 }, 1000);
+                                        $('#skill .in_box03').stop().css({ left: '120px', opacity: 1 }).animate({ left: '300px', opacity: 0 }, 1000);
+                                        $('#skill .in_box04').stop().css({ left: '100px', opacity: 1 }).animate({ left: '300px', opacity: 0 }, 1000);
 
                                     }
                                 });
@@ -169,6 +188,7 @@
                         <h3>LICENSE</h3>
                         <p>
                             운전면허증 1종보통<br>
+                            ROKMC 전역<br>
 
                         </p>
                     </div>
@@ -177,7 +197,7 @@
         </div>
         <!-- 프로젝트1 -->
 
-        <div id="project_1">
+        <div id="project_1" class="box">
             <h2>PORTFOLIO1</h2>
             <div class="in_project_1">
                 <ul class="list">
@@ -197,7 +217,7 @@
             </div>
         </div>
         <!-- 프로젝트2 -->
-        <div id="project_2">
+        <div id="project_2" class="box">
             <h2>PORTFOLIO2</h2>
             <div class="in_project_2">
                 <ul class="list2">
@@ -218,7 +238,13 @@
         </div>
         <!-- 마무리 -->
         <div id="end">
-            <div class="in_end"></div>
+            <h2>CONTACT</h2>
+            <div class="in_end" style="height: 350px;">
+                <p>PHONE : 010-9432-9080</p>
+                <p>EMAIL : tjdqls2s@naver.com</p>
+                <p>KAKAOTALK : seong9080</p>
+                <p>INSTAGRAM : bin__starr</p>
+            </div>
         </div>
     </div>
     <!-- 퀵메뉴 -->
